@@ -7,7 +7,20 @@ box-shadow: 10px 10px 0px rgba(255, 255, 255, 0.616);
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
+  background-image: url('https://www.thisiscolossal.com/wp-content/uploads/2018/04/agif2opt.gif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
 
+.stats-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  opacity: 0.9;
+  z-index: 0;
 }
 
 .stats-grid {
@@ -58,4 +71,14 @@ box-shadow: 10px 10px 0px rgba(255, 255, 255, 0.616);
     flex-direction: column;
     gap: 1.5rem;
   }
+}
+
+.stats-grid,
+.stat-item,
+.stat-label,
+.stat-value,
+.stat-minmax,
+.stat-error {
+  position: relative;
+  z-index: 1;
 }

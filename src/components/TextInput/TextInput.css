@@ -16,7 +16,11 @@
   font-size: 1rem;
   line-height: 1.5;
   font-family: 'ChicagoFLF', sans-serif;
-  box-shadow: 1px 1px 15px rgba(255, 255, 255, 0.918);
+  box-shadow:
+    1px 1px 5px rgba(255, 255, 255, 0.918),
+    inset 1px 1px 5px rgb(241, 239, 239),
+    inset 2px 2px 6px rgba(0,0,0,0.7),   /* dark bottom-right */
+    inset -2px -2px 6px rgba(255,255,255,0.15); /* light top-left */
 }
 
 .text-input-textarea::placeholder {
@@ -26,7 +30,7 @@
 .text-input-textarea:focus {
   outline: none;
   border-color: white;
-  box-shadow: 2px 0 3px 3px rgb(255, 255, 255);
+  box-shadow: 5px 0 3px 3px rgb(255, 255, 255);
 }
 
 /* Mobile view - smaller padding and height */
