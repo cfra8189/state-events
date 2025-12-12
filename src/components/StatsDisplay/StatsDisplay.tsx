@@ -4,7 +4,8 @@ import './StatsDisplay.css';
 
 export const StatsDisplay: React.FC<StatsDisplayProps> = ({
   stats,
-  showReadingTime = true
+  showReadingTime = true,
+  wordError
 }) => {
   const totalSeconds = Math.round(stats.readingTime);
   const minutes = Math.floor(totalSeconds / 60);
@@ -23,6 +24,7 @@ export const StatsDisplay: React.FC<StatsDisplayProps> = ({
           <p className="stat-label">Words</p>
           <p className="stat-value stat-value-green">{stats.wordCount}</p>
           <p className="stat-minmax">Min: 25 | Max: 100</p>
+          {wordError && <p className="stat-error">{wordError}</p>}
         </div>
         
         {showReadingTime && (

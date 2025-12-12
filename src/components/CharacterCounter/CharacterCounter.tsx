@@ -20,13 +20,20 @@ export const CharacterCounter: React.FC<CharacterCounterProps> = ({
     readingTime
   };
 
+  let wordError = '';
+  if (wordCount < minWords) {
+    wordError = `You need at least ${minWords} words.`;
+  } else if (wordCount > maxWords) {
+    wordError = `You have exceeded the max of ${maxWords} words.`;
+  }
+
   return (
     <div style={{display: 'flex', flexDirection: 'column', height: '100%', gap: '1rem', padding: '1rem'}}>
       <div style={{flex: '0 1 auto', maxHeight: '60%'}}>
         <TextInput onTextChange={setText} />
       </div>
       <div style={{flexShrink: 0}}>
-        <StatsDisplay stats={stats} />
+        <StatsDisplay stats={stats} wordError={wordError} />
       </div>
     </div>
   );

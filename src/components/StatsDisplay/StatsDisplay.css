@@ -43,6 +43,13 @@ box-shadow: 10px 10px 0px rgba(255, 255, 255, 0.616);
   font-family: 'ChicagoFLF', sans-serif;
 }
 
+.stat-error {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  font-family: 'ChicagoFLF', sans-serif;
+}
+
 
 
 /* Mobile view - stack vertically */

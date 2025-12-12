@@ -11,6 +11,7 @@ export interface TextStats {
 export interface StatsDisplayProps {
   stats: TextStats;
   showReadingTime?: boolean;
+  wordError?: string;
 }
 export interface CharacterCounterProps {
   minWords?: number;
