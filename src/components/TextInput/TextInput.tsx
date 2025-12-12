@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { TextInputProps } from '../../types';
+import './TextInput.css';
  
 export const TextInput: React.FC<TextInputProps> = ({
   onTextChange,
@@ -15,9 +16,9 @@ export const TextInput: React.FC<TextInputProps> = ({
   };
 
   return (
-    <div className="w-full">
+    <div className="text-input-container">
       <textarea
-        className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-[200px] resize-y bg-white"
+        className="text-input-textarea"
         placeholder="Start typing your content here..."
         value={text}
         onChange={handleChange}

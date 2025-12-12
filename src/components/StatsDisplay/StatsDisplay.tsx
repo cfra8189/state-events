@@ -1,31 +1,34 @@
 import React from 'react';
 import type { StatsDisplayProps } from '../../types';
+import './StatsDisplay.css';
 
 export const StatsDisplay: React.FC<StatsDisplayProps> = ({
   stats,
   showReadingTime = true
 }) => {
-  const minutes = Math.floor(stats.readingTime);
-  const seconds = Math.round((stats.readingTime - minutes) * 60);
+  const totalSeconds = Math.round(stats.readingTime);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
   const readingTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6">
-      <div className="flex justify-around gap-8">
-        <div className="text-center">
-          <p className="text-sm text-gray-500 mb-2">Characters</p>
-          <p className="text-3xl font-semibold text-gray-700">{stats.characterCount}</p>
+    <div className="stats-container">
+      <div className="stats-grid">
+        <div className="stat-item">
+          <p className="stat-label">Characters</p>
+          <p className="stat-value">{stats.characterCount}</p>
         </div>
         
-        <div className="text-center">
-          <p className="text-sm text-gray-500 mb-2">Words</p>
-          <p className="text-3xl font-semibold text-green-600">{stats.wordCount}</p>
+        <div className="stat-item">
+          <p className="stat-label">Words</p>
+          <p className="stat-value stat-value-green">{stats.wordCount}</p>
+          <p className="stat-minmax">Min: 25 | Max: 100</p>
         </div>
         
         {showReadingTime && (
-          <div className="text-center">
-            <p className="text-sm text-gray-500 mb-2">Reading Time</p>
-            <p className="text-3xl font-semibold text-gray-700">{readingTime}</p>
+          <div className="stat-item">
+            <p className="stat-label">Reading Time</p>
+            <p className="stat-value">{readingTime}</p>
           </div>
         )}
       </div>

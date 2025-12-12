@@ -21,9 +21,11 @@ export const CharacterCounter: React.FC<CharacterCounterProps> = ({
   };
 
   return (
-    <div className="p-8">
-      <div className="space-y-6">
+    <div style={{display: 'flex', flexDirection: 'column', height: '100%', gap: '1rem', padding: '1rem'}}>
+      <div style={{flex: '0 1 auto', maxHeight: '60%'}}>
         <TextInput onTextChange={setText} />
+      </div>
+      <div style={{flexShrink: 0}}>
         <StatsDisplay stats={stats} />
       </div>
     </div>
