@@ -27,11 +27,7 @@
   color: #9ca3af;
 }
 
-.text-input-textarea:focus {
-  outline: none;
-  border-color: white;
-  box-shadow: 5px 0 3px 3px rgb(255, 255, 255);
-}
+
 
 /* Mobile view - smaller padding and height */
 @media (max-width: 768px) {
